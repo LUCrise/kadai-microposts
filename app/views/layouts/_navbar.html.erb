@@ -2,6 +2,10 @@
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container-fluid ps-5 pe-5">
       <a class="navbar-brand" href="/">Microposts</a>
+      <% if logged_in? %>
+        <%= link_to 'Favorites', likes_user_path(current_user), class: 'navbar-brand' %>
+      <% else %>
+      <% end %>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
       </button>
