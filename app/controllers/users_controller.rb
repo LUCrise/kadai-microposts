@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   #ここが一覧取得
   def likes
     @user = User.find(params[:id])
-    @pagy, @microposts = pagy(Micropost.where(id:@user.favorites.pluck(:micropost_id)))
+    @pagy, @microposts = pagy(@user.like)
     counts(@user)
   end
   
